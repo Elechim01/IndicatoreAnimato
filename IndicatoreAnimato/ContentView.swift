@@ -9,8 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+//        Getting ScreenSize globaly...
+        GeometryReader{ proxy in
+            let size = proxy.size
+            Home(screenSize : size)
+                .preferredColorScheme(.dark)
+        }
+      
     }
 }
 
